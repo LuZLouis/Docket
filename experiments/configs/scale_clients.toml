@@ -1,0 +1,80 @@
+[experiment]
+name = "scale_clients"
+description = "Selected-client scaling with fixed dimension and Bulletproofs backend."
+backend = "bulletproofs"
+cargo_features = "bulletproofs"
+paper_level = true
+output_root = "results/scale_clients"
+measurement_mode = "derived_linear_model"
+derivation = "Use measured per-client component costs and scripts/analyze_avsa_experiments.py --derive-client-scaling. Do not run full Bulletproofs rounds for every client count."
+
+[defaults]
+dim = 1024
+b_inf = 3
+b2_sq = 9216
+bit_size = 16
+iters = 5
+warmup = 1
+seed = 42
+admitted_ratio = 0.875
+dropout_ratio = 0.125
+rejected_ratio = 0.0
+
+[[cases]]
+name = "clients_8"
+n_selected = 8
+n_admitted = 7
+n_dropped = 1
+n_rejected = 0
+out = "results/scale_clients/n8"
+
+[[cases]]
+name = "clients_16"
+n_selected = 16
+n_admitted = 14
+n_dropped = 2
+n_rejected = 0
+out = "results/scale_clients/n16"
+
+[[cases]]
+name = "clients_32"
+n_selected = 32
+n_admitted = 28
+n_dropped = 4
+n_rejected = 0
+out = "results/scale_clients/n32"
+
+[[cases]]
+name = "clients_64"
+n_selected = 64
+n_admitted = 56
+n_dropped = 8
+n_rejected = 0
+out = "results/scale_clients/n64"
+
+[[cases]]
+name = "clients_128"
+n_selected = 128
+n_admitted = 112
+n_dropped = 16
+n_rejected = 0
+out = "results/scale_clients/n128"
+
+[[cases]]
+name = "clients_256"
+n_selected = 256
+n_admitted = 224
+n_dropped = 32
+n_rejected = 0
+out = "results/scale_clients/n256"
+
+[[cases]]
+name = "clients_512_heavy"
+n_selected = 512
+n_admitted = 448
+n_dropped = 64
+n_rejected = 0
+iters = 3
+warmup = 1
+heavy = true
+out = "results/scale_clients/n512_heavy"

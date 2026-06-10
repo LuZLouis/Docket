@@ -1,0 +1,72 @@
+[experiment]
+name = "scale_dimension"
+description = "Dimension scaling with fixed selected-client count and Bulletproofs backend."
+backend = "bulletproofs"
+cargo_features = "bulletproofs"
+paper_level = true
+output_root = "results/scale_dimension"
+
+[defaults]
+n_selected = 1
+n_admitted = 1
+n_dropped = 0
+n_rejected = 0
+b_inf = 3
+bit_size = 32
+iters = 1
+warmup = 0
+seed = 42
+measurement_mode = "per_client_probe"
+target_n_selected = 50
+target_note = "Client-count totals should be derived by analysis, not measured by repeating large Bulletproofs proofs."
+
+[[cases]]
+name = "debug_smoke"
+dataset = "debug"
+dim = 8
+b2_sq = 72
+bit_size = 8
+iters = 5
+warmup = 1
+out = "results/scale_dimension/debug_smoke"
+
+[[cases]]
+name = "mnist_like"
+dataset = "MNIST"
+dim = 19000
+b2_sq = 171000
+bit_size = 32
+chunked_bulletproofs = true
+note = "Exact RoFL/ACORN dimension; the Bulletproofs backend chunks non-power-of-two dimensions internally."
+out = "results/scale_dimension/mnist_like"
+
+[[cases]]
+name = "cifar10_s_like"
+dataset = "CIFAR10-S"
+dim = 62000
+b2_sq = 558000
+bit_size = 32
+chunked_bulletproofs = true
+note = "Exact RoFL/ACORN dimension; the Bulletproofs backend chunks non-power-of-two dimensions internally."
+out = "results/scale_dimension/cifar10_s_like"
+
+[[cases]]
+name = "cifar10_l_like"
+dataset = "CIFAR10-L"
+dim = 273000
+b2_sq = 2457000
+bit_size = 32
+chunked_bulletproofs = true
+note = "Exact RoFL/ACORN dimension; the Bulletproofs backend chunks non-power-of-two dimensions internally."
+out = "results/scale_dimension/cifar10_l_like"
+
+[[cases]]
+name = "shakespeare_like"
+dataset = "Shakespeare"
+dim = 818000
+b2_sq = 7362000
+bit_size = 32
+chunked_bulletproofs = true
+heavy = true
+note = "Exact RoFL/ACORN dimension; the Bulletproofs backend chunks non-power-of-two dimensions internally."
+out = "results/scale_dimension/shakespeare_like"

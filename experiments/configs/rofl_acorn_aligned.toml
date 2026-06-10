@@ -1,0 +1,62 @@
+[experiment]
+name = "rofl_acorn_aligned"
+description = "AVSA runs aligned to RoFL/ACORN dataset dimensions and predicates."
+backend = "bulletproofs"
+cargo_features = "bulletproofs"
+paper_level = true
+output_root = "results/rofl_acorn_aligned"
+baseline_csv = "experiments/baselines/rofl_acorn_provided.csv"
+
+[defaults]
+n_selected = 1
+n_admitted = 1
+n_dropped = 0
+n_rejected = 0
+b_inf = 3
+bit_size = 32
+iters = 1
+warmup = 0
+seed = 42
+predicate_scopes = ["q_inf", "q_2"]
+measurement_mode = "per_client_probe"
+target_n_selected = 50
+target_n_admitted = 44
+target_n_dropped = 6
+target_note = "RoFL/ACORN comparison is per-client; 50-client totals are derived separately."
+
+[[cases]]
+name = "mnist_rofl_acorn"
+dataset = "MNIST"
+dim = 19000
+b2_sq = 171000
+chunked_bulletproofs = true
+note = "Exact RoFL/ACORN dimension; the Bulletproofs backend chunks non-power-of-two dimensions internally."
+out = "results/rofl_acorn_aligned/mnist"
+
+[[cases]]
+name = "cifar10_s_rofl_acorn"
+dataset = "CIFAR10-S"
+dim = 62000
+b2_sq = 558000
+chunked_bulletproofs = true
+note = "Exact RoFL/ACORN dimension; the Bulletproofs backend chunks non-power-of-two dimensions internally."
+out = "results/rofl_acorn_aligned/cifar10_s"
+
+[[cases]]
+name = "cifar10_l_rofl_acorn"
+dataset = "CIFAR10-L"
+dim = 273000
+b2_sq = 2457000
+chunked_bulletproofs = true
+note = "Exact RoFL/ACORN dimension; the Bulletproofs backend chunks non-power-of-two dimensions internally."
+out = "results/rofl_acorn_aligned/cifar10_l"
+
+[[cases]]
+name = "shakespeare_rofl_acorn"
+dataset = "Shakespeare"
+dim = 818000
+b2_sq = 7362000
+chunked_bulletproofs = true
+heavy = true
+note = "Exact RoFL/ACORN dimension; the Bulletproofs backend chunks non-power-of-two dimensions internally."
+out = "results/rofl_acorn_aligned/shakespeare"

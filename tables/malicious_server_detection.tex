@@ -1,0 +1,51 @@
+% Auto-generated from AVSA evaluation CSVs.
+\begin{table}[t]
+\centering
+\caption{Malicious aggregation-server detection labels.}
+\begin{tabular}{llllll}
+\toprule
+attack & verifier & expected\_label & actual\_label & detected & passed \\
+\midrule
+false\_accept & VerifyAcceptedDecision & reject(validation) & reject(validation) & true & true \\
+false\_reject & VerifyAppeal & serverFault(falseReject) & serverFault(falseReject) & true & true \\
+omission & VerifyAppeal & serverFault(omission) & serverFault(omission) & true & true \\
+equivocation\_root & CompareSignedRoots & equivocation(root) & equivocation(root) & true & true \\
+equivocation\_admitted\_set & CompareAggregateCertificates & equivocation(admittedSet) & equivocation(admittedSet) & true & true \\
+unsupported\_recovery & VerifyMaskOpen & reject(domain) & reject(domain) & true & true \\
+missing\_opening & VerifyMaskOpen & reject(pairOpening) & reject(pairOpening) & true & true \\
+extra\_opening & VerifyMaskOpen & reject(domain) & reject(domain) & true & true \\
+wrong\_opening & VerifyMaskOpen & reject(pairOpening) & reject(pairOpening) & true & true \\
+wrong\_tag\_mask & VerifyMaskTag & reject(maskTag) & reject(maskTag) & true & true \\
+wrong\_aggregate & VerifyAggregate & reject(aggregateSum) & reject(aggregateSum) & true & true \\
+equivocation\_aggregate & CompareAggregateCertificates & equivocation(aggregate) & equivocation(aggregate) & true & true \\
+false\_accept & VerifyAcceptedDecision & reject(validation) & reject(validation) & true & true \\
+false\_reject & VerifyAppeal & serverFault(falseReject) & serverFault(falseReject) & true & true \\
+omission & VerifyAppeal & serverFault(omission) & serverFault(omission) & true & true \\
+equivocation\_root & CompareSignedRoots & equivocation(root) & equivocation(root) & true & true \\
+equivocation\_admitted\_set & CompareAggregateCertificates & equivocation(admittedSet) & equivocation(admittedSet) & true & true \\
+unsupported\_recovery & VerifyMaskOpen & reject(domain) & reject(domain) & true & true \\
+missing\_opening & VerifyMaskOpen & reject(pairOpening) & reject(pairOpening) & true & true \\
+extra\_opening & VerifyMaskOpen & reject(domain) & reject(domain) & true & true \\
+wrong\_opening & VerifyMaskOpen & reject(pairOpening) & reject(pairOpening) & true & true \\
+wrong\_tag\_mask & VerifyMaskTag & reject(maskTag) & reject(maskTag) & true & true \\
+wrong\_aggregate & VerifyAggregate & reject(aggregateSum) & reject(aggregateSum) & true & true \\
+equivocation\_aggregate & CompareAggregateCertificates & equivocation(aggregate) & equivocation(aggregate) & true & true \\
+false\_accept & VerifyAcceptedDecision & reject(validation) & reject(validation) & true & true \\
+false\_reject & VerifyAppeal & serverFault(falseReject) & serverFault(falseReject) & true & true \\
+omission & VerifyAppeal & serverFault(omission) & serverFault(omission) & true & true \\
+equivocation\_root & CompareSignedRoots & equivocation(root) & equivocation(root) & true & true \\
+equivocation\_admitted\_set & CompareAggregateCertificates & equivocation(admittedSet) & equivocation(admittedSet) & true & true \\
+unsupported\_recovery & VerifyMaskOpen & reject(domain) & reject(domain) & true & true \\
+missing\_opening & VerifyMaskOpen & reject(pairOpening) & reject(pairOpening) & true & true \\
+extra\_opening & VerifyMaskOpen & reject(domain) & reject(domain) & true & true \\
+wrong\_opening & VerifyMaskOpen & reject(pairOpening) & reject(pairOpening) & true & true \\
+wrong\_tag\_mask & VerifyMaskTag & reject(maskTag) & reject(maskTag) & true & true \\
+wrong\_aggregate & VerifyAggregate & reject(aggregateSum) & reject(aggregateSum) & true & true \\
+equivocation\_aggregate & CompareAggregateCertificates & equivocation(aggregate) & equivocation(aggregate) & true & true \\
+false\_accept & VerifyAcceptedDecision & reject(validation) & reject(validation) & true & true \\
+false\_reject & VerifyAppeal & serverFault(falseReject) & serverFault(falseReject) & true & true \\
+omission & VerifyAppeal & serverFault(omission) & serverFault(omission) & true & true \\
+equivocation\_root & CompareSignedRoots & equivocation(root) & equivocation(root) & true & true \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,7 @@
+run_id,backend,case_name,n_selected,n_admitted,n_dropped,n_rejected,dim,object_type,count,total_bytes,mean_bytes,min_bytes,max_bytes
+synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,ClientRecord,4,4000,1000,1000,1000
+synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,SubmitProof,4,800,200,200,200
+synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,SignedRangeProof,4,1200,300,300,300
+synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,L2Proof,4,1600,400,400,400
+synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,MaskCertificate,1,700,700,700,700
+synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,AggregateCertificate,1,900,900,900,900

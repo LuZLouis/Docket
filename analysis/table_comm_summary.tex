@@ -1,0 +1,54 @@
+% Generated from measured AVSA CSVs and provided baseline data.
+\begin{table}[t]
+\centering
+\small
+\caption{AVSA Communication Summary}
+\begin{tabular}{llllllllllllllll}
+\toprule
+backend & case\_name & n\_selected & n\_admitted & n\_dropped & n\_rejected & dim & object\_type & count & total\_bytes & mean\_bytes & min\_bytes & max\_bytes & bytes\_per\_client & bytes\_per\_coordinate & size\_category \\
+\midrule
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & AggregateCertificate & 1 & 33364 & 33364 & 33364 & 33364 & 4170.5 & 521.312 & aggregatecert\_audit\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & AggregateOutput & 1 & 2056 & 2056 & 2056 & 2056 & 257 & 32.125 & aggregatecert\_audit\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & AppealInput & 1 & 35824 & 35824 & 35824 & 35824 & 4478 & 559.75 & appeal\_support\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & ClientRecord & 8 & 280648 & 35081 & 35081 & 35081 & 35081 & 4385.12 & base\_submission\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & DecisionCertificate & 1 & 5304 & 5304 & 5304 & 5304 & 663 & 82.875 & decision\_accountability\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & L2Proof & 8 & 56128 & 7016 & 7016 & 7016 & 7016 & 877 & input\_validation\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & MaskCertificate & 1 & 31186 & 31186 & 31186 & 31186 & 3898.25 & 487.281 & maskcert\_audit\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & MembershipProof & 8 & 4672 & 584 & 584 & 584 & 584 & 73 & decision\_accountability\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & Receipt & 8 & 664 & 83 & 83 & 83 & 83 & 10.375 & decision\_accountability\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & RecordDigest & 8 & 256 & 32 & 32 & 32 & 32 & 4 & decision\_accountability\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & SignedRangeProof & 8 & 24640 & 3080 & 3080 & 3080 & 3080 & 385 & input\_validation\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & SubmitProof & 8 & 98688 & 12336 & 12336 & 12336 & 12336 & 1542 & client\_accountability\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & Transcript & 1 & 568 & 568 & 568 & 568 & 71 & 8.875 & decision\_accountability\_cost \\
+bulletproofs & small & 8 & 7 & 1 & 0 & 64 & TranscriptRoot & 1 & 32 & 32 & 32 & 32 & 4 & 0.5 & decision\_accountability\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & AggregateCertificate & 1 & 12652 & 12652 & 12652 & 12652 & 790.75 & 1581.5 & aggregatecert\_audit\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & AggregateOutput & 1 & 264 & 264 & 264 & 264 & 16.5 & 33 & aggregatecert\_audit\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & AppealInput & 1 & 8064 & 8064 & 8064 & 8064 & 504 & 1008 & appeal\_support\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & ClientRecord & 16 & 108688 & 6793 & 6793 & 6793 & 6793 & 13586 & base\_submission\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & DecisionCertificate & 1 & 18990 & 18990 & 18990 & 18990 & 1186.88 & 2373.75 & decision\_accountability\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & L2Proof & 16 & 25216 & 1576 & 1576 & 1576 & 1576 & 3152 & input\_validation\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & MaskCertificate & 1 & 12210 & 12210 & 12210 & 12210 & 763.125 & 1526.25 & maskcert\_audit\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & MembershipProof & 16 & 17792 & 1112 & 1112 & 1112 & 1112 & 2224 & decision\_accountability\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & Receipt & 16 & 1328 & 83 & 83 & 83 & 83 & 166 & decision\_accountability\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & RecordDigest & 16 & 512 & 32 & 32 & 32 & 32 & 64 & decision\_accountability\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & SignedRangeProof & 16 & 16512 & 1032 & 1032 & 1032 & 1032 & 2064 & input\_validation\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & SubmitProof & 16 & 25344 & 1584 & 1584 & 1584 & 1584 & 3168 & client\_accountability\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & Transcript & 1 & 1096 & 1096 & 1096 & 1096 & 68.5 & 137 & decision\_accountability\_cost \\
+bulletproofs & smoke & 16 & 14 & 2 & 0 & 8 & TranscriptRoot & 1 & 32 & 32 & 32 & 32 & 2 & 4 & decision\_accountability\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & AggregateCertificate & 1 & 2388 & 2388 & 2388 & 2388 & 597 & 298.5 & aggregatecert\_audit\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & AggregateOutput & 1 & 264 & 264 & 264 & 264 & 66 & 33 & aggregatecert\_audit\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & AppealInput & 1 & 4008 & 4008 & 4008 & 4008 & 1002 & 501 & appeal\_support\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & ClientRecord & 4 & 14116 & 3529 & 3529 & 3529 & 3529 & 1764.5 & base\_submission\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & DecisionCertificate & 1 & 1640 & 1640 & 1640 & 1640 & 410 & 205 & decision\_accountability\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & L2Proof & 4 & 6304 & 1576 & 1576 & 1576 & 1576 & 788 & input\_validation\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & MaskCertificate & 1 & 2034 & 2034 & 2034 & 2034 & 508.5 & 254.25 & maskcert\_audit\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & MembershipProof & 4 & 1280 & 320 & 320 & 320 & 320 & 160 & decision\_accountability\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & Receipt & 4 & 332 & 83 & 83 & 83 & 83 & 41.5 & decision\_accountability\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & RecordDigest & 4 & 128 & 32 & 32 & 32 & 32 & 16 & decision\_accountability\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & SignedRangeProof & 4 & 4128 & 1032 & 1032 & 1032 & 1032 & 516 & input\_validation\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & SubmitProof & 4 & 6336 & 1584 & 1584 & 1584 & 1584 & 792 & client\_accountability\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & Transcript & 1 & 304 & 304 & 304 & 304 & 76 & 38 & decision\_accountability\_cost \\
+bulletproofs & smoke & 4 & 3 & 1 & 0 & 8 & TranscriptRoot & 1 & 32 & 32 & 32 & 32 & 8 & 4 & decision\_accountability\_cost \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,5 @@
+run_id,backend,case_name,check_name,expected,observed,success,error
+synthetic-bp-smoke,bulletproofs,synthetic_smoke,submit_verify_all,success,synthetic fixture pass,true,
+synthetic-bp-smoke,bulletproofs,synthetic_smoke,signed_range_verify_all,success,synthetic fixture pass,true,
+synthetic-bp-smoke,bulletproofs,synthetic_smoke,l2_verify_all,success,synthetic fixture pass,true,
+synthetic-bp-smoke,bulletproofs,synthetic_smoke,honest_full_audit_pipeline,success,synthetic fixture pass,true,

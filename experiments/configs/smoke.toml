@@ -1,0 +1,16 @@
+[experiment]
+name = "smoke"
+output = "results/smoke.csv"
+
+[defaults]
+backend = "smoke-saiv-public"
+seed = 1
+
+[[cases]]
+name = "tiny"
+n = 5
+dimension = 16
+admitted = 4
+excluded = 1
+dropped = 0
+non_admitted = 1

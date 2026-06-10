@@ -1,0 +1,63 @@
+[experiment]
+name = "common_path"
+output = "results/common_path.csv"
+
+[defaults]
+backend = "saiv-public"
+seed = 42
+
+[[cases]]
+name = "mnist_n10"
+n = 10
+dimension = 19000
+admitted = 8
+excluded = 2
+dropped = 0
+
+[[cases]]
+name = "mnist_n50"
+n = 50
+dimension = 19000
+admitted = 40
+excluded = 10
+dropped = 0
+
+[[cases]]
+name = "cifar10_s_n50"
+n = 50
+dimension = 62000
+admitted = 40
+excluded = 10
+dropped = 0
+
+[[cases]]
+name = "cifar10_l_n50"
+n = 50
+dimension = 273000
+admitted = 40
+excluded = 10
+dropped = 0
+
+[[cases]]
+name = "shakespeare_n50"
+n = 50
+dimension = 818000
+admitted = 40
+excluded = 10
+dropped = 0
+
+[[cases]]
+name = "mnist_n100"
+n = 100
+dimension = 19000
+admitted = 80
+excluded = 20
+dropped = 0
+
+[[cases]]
+name = "mnist_n200"
+n = 200
+dimension = 19000
+admitted = 160
+excluded = 40
+dropped = 0

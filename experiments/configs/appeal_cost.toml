@@ -1,0 +1,39 @@
+[experiment]
+name = "appeal_cost"
+output = "results/appeal_cost.csv"
+
+[defaults]
+backend = "saiv-public"
+seed = 44
+
+[[cases]]
+name = "mnist_n50"
+n = 50
+dimension = 19000
+admitted = 40
+excluded = 10
+dropped = 0
+
+[[cases]]
+name = "cifar10_s_n50"
+n = 50
+dimension = 62000
+admitted = 40
+excluded = 10
+dropped = 0
+
+[[cases]]
+name = "cifar10_l_n50"
+n = 50
+dimension = 273000
+admitted = 40
+excluded = 10
+dropped = 0
+
+[[cases]]
+name = "shakespeare_n50"
+n = 50
+dimension = 818000
+admitted = 40
+excluded = 10
+dropped = 0

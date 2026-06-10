@@ -1,0 +1,47 @@
+[experiment]
+name = "tag_vs_opening"
+output = "results/tag_vs_opening.csv"
+
+[defaults]
+backend = "saiv-public"
+seed = 43
+
+[[cases]]
+name = "mnist_boundary_20_16x4"
+n = 20
+dimension = 19000
+admitted = 16
+non_admitted = 4
+excluded = 4
+
+[[cases]]
+name = "mnist_boundary_50_40x10"
+n = 50
+dimension = 19000
+admitted = 40
+non_admitted = 10
+excluded = 10
+
+[[cases]]
+name = "cifar10_s_boundary_50_40x10"
+n = 50
+dimension = 62000
+admitted = 40
+non_admitted = 10
+excluded = 10
+
+[[cases]]
+name = "cifar10_l_boundary_100_80x20"
+n = 100
+dimension = 273000
+admitted = 80
+non_admitted = 20
+excluded = 20
+
+[[cases]]
+name = "shakespeare_boundary_200_160x40"
+n = 200
+dimension = 818000
+admitted = 160
+non_admitted = 40
+excluded = 40
