@@ -1,29 +1,29 @@
-# AVSA Rust Reference Implementation
+# Docket Rust Reference Implementation
 
 This repository contains the Rust reference implementation and evaluation
 artifacts for the manuscript:
 
-**AVSA: Accountable and Verifiable Secure Aggregation**
+**Docket: Server Accountability for Input-Validated Secure Aggregation**
 
-The manuscript is currently submitted to **IEEE Transactions on Dependable and
-Secure Computing (TDSC)**. AVSA is a public-accountability layer for secure
-aggregation with input validation. The implementation focuses on protocol
-algebra, public audit judgments, mask accountability, aggregate verification,
-and benchmark/analysis tooling used by the paper.
+The manuscript is currently submitted to **IEEE Transactions on Information
+Forensics and Security (TIFS)**. Docket adds public accountability to secure
+aggregation with input validation. The implementation covers the protocol
+algebra, admission and recovery logic, public audit, aggregate verification,
+and the benchmark and analysis tooling used in the paper.
 
-The repository does not contain a federated-learning training stack or real
-datasets. Update vectors are simulated signed values encoded into the scalar
-field so that the audit and certificate logic can be tested reproducibly.
+The evaluation uses synthetic signed update vectors encoded in the scalar
+field. This isolates the cryptographic and protocol costs measured in the
+paper.
 
 ## Repository Layout
 
 ```text
-src/              Rust library and bench_avsa binary
+src/              Rust library and bench_docket binary
 tests/            Rust integration tests
 experiments/      Benchmark configurations, fixtures, and baseline CSV inputs
-results/          Existing benchmark CSV outputs
+results/          Benchmark CSV outputs
 analysis/         Derived paper-facing CSV/Markdown/LaTeX tables
-figures/          Generated plots from the included analysis outputs
+figures/          Generated plots from the analysis outputs
 tables/           Generated LaTeX table fragments
 scripts/          Python analysis, merge, and plotting utilities
 docs/             Additional implementation notes
@@ -39,8 +39,8 @@ Required:
 Optional, for analysis and plotting:
 
 - Python 3.9 or newer.
-- `matplotlib`, only if plot generation is required. The analysis scripts use
-  the Python standard library for CSV processing.
+- `matplotlib` for plot generation. The analysis scripts use the Python
+  standard library for CSV processing.
 
 Optional, for Bulletproofs-based predicate benchmarks:
 
@@ -64,72 +64,68 @@ cargo test --features bulletproofs
 The benchmark binary exposes its command-line options with:
 
 ```powershell
-cargo run --bin bench_avsa -- --help
+cargo run --bin bench_docket -- --help
 ```
 
-## Running AVSA Benchmarks
+## Running Docket Benchmarks
 
-The formal AVSA evaluation suite can be run from the repository root:
+The complete Docket evaluation suite can be run from the repository root:
 
 ```powershell
-cargo run --release --bin bench_avsa -- --full --time-mode calibrated --repetitions 5 --out results
+cargo run --release --bin bench_docket -- --full --time-mode calibrated --repetitions 5 --out results
 ```
 
 For Bulletproofs-backed component runs:
 
 ```powershell
-cargo run --release --features bulletproofs --bin bench_avsa -- --preset small --backend bulletproofs --iters 10 --warmup 2 --out results/avsa_internal_small
+cargo run --release --features bulletproofs --bin bench_docket -- --preset small --backend bulletproofs --iters 10 --warmup 2 --out results/docket_internal_small
 ```
 
 The RoFL/ACORN-aligned configurations used by the analysis scripts are listed
-in `experiments/configs/rofl_acorn_aligned.toml`. To print the concrete run
-commands:
+in `experiments/configs/rofl_acorn_aligned.toml`. To print the corresponding
+run commands:
 
 ```powershell
 python scripts/print_experiment_commands.py --config experiments/configs/rofl_acorn_aligned.toml
 ```
 
-The included baseline CSV files contain only available published or
-author-provided baseline values. The scripts do not synthesize missing RoFL or
-ACORN measurements.
+The baseline CSV files contain the available published or author-provided
+RoFL and ACORN measurements used in the paper.
 
 ## Analysis and Figures
 
-To regenerate paper-facing tables from existing benchmark outputs:
+To regenerate paper-facing tables from benchmark outputs:
 
 ```powershell
-python scripts/analyze_avsa_experiments.py --input results --out analysis --paper-mode --derive-client-scaling --baseline experiments/baselines/rofl_acorn_provided.csv
-python scripts/merge_baselines.py --avsa analysis --baseline experiments/baselines/rofl_acorn_provided.csv --out analysis/comparison_merged.csv
+python scripts/analyze_docket_experiments.py --input results --out analysis --paper-mode --derive-client-scaling --baseline experiments/baselines/rofl_acorn_provided.csv
+python scripts/merge_baselines.py --docket analysis --baseline experiments/baselines/rofl_acorn_provided.csv --out analysis/comparison_merged.csv
 ```
 
 To regenerate plots when `matplotlib` is installed:
 
 ```powershell
-python scripts/plot_avsa_experiments.py --input analysis --out figures --png-preview
+python scripts/plot_docket_experiments.py --input analysis --out figures --png-preview
 ```
 
-The synthetic fixture directory under `experiments/fixtures/` is for script
-development only and should not be treated as paper-level cryptographic
-performance data.
+The synthetic fixtures under `experiments/fixtures/` support reproducible
+protocol and benchmark execution.
 
 ## Implementation Scope
 
-The current code includes:
+The implementation includes:
 
-- public AVSA parameter checks and signed fixed-point simulation helpers;
+- Docket parameter and threshold checks;
 - vector arithmetic over `curve25519_dalek::Scalar`;
-- Ristretto/Pedersen commitment helpers;
-- complete selected-client pairwise mask graph logic;
-- self masks, pairwise masks, submitted masks, masked updates, and mask tags;
-- submission binding for masked updates, commitments, mask tags, and witnesses;
-- deterministic transcript roots, receipt checks, decision certificates, and
-  appeal outcomes;
-- raw mask certificates with exact opening-domain checks;
-- aggregate certificates binding admitted decisions, masks, and released sums;
-- signed range and L2 predicate interfaces, with mock and optional Bulletproofs
+- Ristretto/Pedersen commitment operations;
+- additive and native masking profiles;
+- verifiable sharing of recoverable mask openings;
+- signed submission records, receipts, admission decisions, and appeals;
+- authenticated finalization and aggregate-share release;
+- aggregate mask certificates and output verification;
+- shared-response linking proofs between validated inputs, submitted
+  encodings, and recoverable masks;
+- range and L2 predicate interfaces with mock and optional Bulletproofs
   backends;
-- benchmark and analysis tooling for AVSA-specific accountability overhead.
-
-The implementation is a research prototype for reproducibility and protocol
-checking. It is not a production deployment of federated learning, secure
-network transport, ledger publication, or client orchestration.
+- public transcript verification and accountability checks;
+- benchmark and analysis tooling for Docket's computation, communication,
+  and recovery overhead.
