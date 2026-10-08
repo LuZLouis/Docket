@@ -1,7 +1,0 @@
-# AVSA Accountability Overhead
-
-| backend | case_name | n_selected | dim | base_submission_cost_ms | input_validation_cost_ms | client_accountability_cost_ms | decision_accountability_cost_ms | appeal_support_cost_ms | maskcert_audit_cost_ms | aggregatecert_audit_cost_ms | total_avsa_audit_cost_ms | incremental_accountability_overhead_ms | incremental_accountability_ratio |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| bulletproofs | small | 8 | 64 | 2427.27 | 322.249 | 19.253 | 43.9021 | 17.3442 | 25.4209 | 126.201 | 633.536 | 311.287 | 0.965984 |
-| bulletproofs | smoke | 16 | 8 | 511.005 | 32.3215 | 3.00478 | 13.571 | 2.91976 | 9.1428 | 42.7566 | 161.64 | 129.318 | 4.001 |
-| bulletproofs | smoke | 4 | 8 | 113.28 | 33.0314 | 2.20646 | 3.06593 | 1.8192 | 1.4753 | 6.43267 | 31.7541 | 0 | 0 |
