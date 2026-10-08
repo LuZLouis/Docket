@@ -109,23 +109,3 @@ python scripts/plot_docket_experiments.py --input analysis --out figures --png-p
 
 The synthetic fixtures under `experiments/fixtures/` support reproducible
 protocol and benchmark execution.
-
-## Implementation Scope
-
-The implementation includes:
-
-- Docket parameter and threshold checks;
-- vector arithmetic over `curve25519_dalek::Scalar`;
-- Ristretto/Pedersen commitment operations;
-- additive and native masking profiles;
-- verifiable sharing of recoverable mask openings;
-- signed submission records, receipts, admission decisions, and appeals;
-- authenticated finalization and aggregate-share release;
-- aggregate mask certificates and output verification;
-- shared-response linking proofs between validated inputs, submitted
-  encodings, and recoverable masks;
-- range and L2 predicate interfaces with mock and optional Bulletproofs
-  backends;
-- public transcript verification and accountability checks;
-- benchmark and analysis tooling for Docket's computation, communication,
-  and recovery overhead.
