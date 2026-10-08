@@ -1,8 +1,0 @@
-run_id,backend,case_name,n_selected,n_admitted,n_dropped,n_rejected,dim,b_inf,b2_sq,bit_size,component,operation,iterations,warmup,mean_ms,p50_ms,p95_ms,min_ms,max_ms,success
-synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,3,72,8,submit,submit_prove,1,0,1.0,1.0,1.0,1.0,1.0,true
-synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,3,72,8,submit,submit_verify,1,0,0.5,0.5,0.5,0.5,0.5,true
-synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,3,72,8,range,signed_range_prove,1,0,2.0,2.0,2.0,2.0,2.0,true
-synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,3,72,8,range,signed_range_verify,1,0,1.0,1.0,1.0,1.0,1.0,true
-synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,3,72,8,l2,l2_prove,1,0,3.0,3.0,3.0,3.0,3.0,true
-synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,3,72,8,l2,l2_verify,1,0,1.5,1.5,1.5,1.5,1.5,true
-synthetic-bp-smoke,bulletproofs,synthetic_smoke,4,3,1,0,8,3,72,8,pipeline,honest_full_audit_pipeline,1,0,12.0,12.0,12.0,12.0,12.0,true
